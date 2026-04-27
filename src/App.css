@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Irish+Grover&family=Itim&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&family=Righteous&family=Share+Tech+Mono&family=Syne:wght@400..800&display=swap");
 
 :root {
-  --bg-button: #c1cbf2;
+  --color-primary: #c1cbf2;
+}
+
+body {
+  background-color: whitesmoke;
 }
 
 * {
@@ -13,36 +17,58 @@
 
 .logo {
   font-family: "Irish Grover";
-  font-size: 30px;
+  font-size: 20px;
   text-shadow: 0 3px 4px #7a74ef;
   color: transparent;
   background-color: #1633a4;
   -webkit-background-clip: text;
+  -webkit-text-stroke: 0.5px white;
   background-clip: text;
 }
 
+.title {
+  text-align: center;
+  font-size: 25px;
+  text-shadow:
+    -2px -2px 0 var(--color-primary),
+    2px -2px 0 var(--color-primary),
+    -2px 2px 0 var(--color-primary),
+    2px 2px 0 var(--color-primary);
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
 header {
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem;
 }
 
 header > nav > ul > li > a {
   padding: 5px 10px;
   border-radius: 10px;
-  background-color: var(--bg-button);
+  background-color: var(--color-primary);
   color: white !important ;
-  font-size: 16px;
+  font-size: 10px;
   text-shadow:
     -1px -1px 0 rgba(0, 0, 0, 0.4),
     1px -1px 0 rgba(0, 0, 0, 0.4),
     -1px 1px 0 rgba(0, 0, 0, 0.4),
     1px 1px 0 rgba(0, 0, 0, 0.4),
     0 2px 4px black;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.29);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.29);
   font-weight: 500;
 }
 
-#btn-connect{
+#btn-connect {
+  background-color: blue;
+}
 
-background-color: blue;
+footer {
+  border: none;
+  padding: 0rem 2rem;
+  background-color: var(--color-primary);
+  box-shadow: 0 0 5px 5px var(--color-primary);
+}
 
+footer > p {
+  -webkit-text-stroke: 0.2px white;
 }

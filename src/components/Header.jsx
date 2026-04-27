@@ -1,14 +1,24 @@
+import { NavLink } from "react-router-dom";
+
 export const Header = () => {
   return (
-    <header className="flex justify-between items-center " >
-        <h1 className="logo">CFI-QUIZZ</h1>
-        <nav>
-            <ul className="flex gap-4" >
-                <li><a href="">ACCUEIL</a></li>
-                <li><a href="">S'INSCRIRE</a></li>
-                <li><a href="" id="btn-connect" >SE CONNECTER</a></li>
-            </ul>
-        </nav>
+    <header className="flex justify-between items-center ">
+      <h2 className="logo">CFI-QUIZZ</h2>
+      <nav>
+        <ul className="flex gap-4">
+          <li  >
+            <NavLink to="/">ACCUEIL</NavLink>
+          </li>
+          <li>
+            <NavLink to="/">S'INSCRIRE</NavLink>
+          </li>
+          <li>
+            <NavLink to="/" id="btn-connect">
+              SE CONNECTER
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
     </header>
-  )
-}
+  );
+};
