@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Irish+Grover&family=Itim&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&family=Righteous&family=Share+Tech+Mono&family=Syne:wght@400..800&display=swap");
+
+:root {
+  --bg-button: #c1cbf2;
+}
+
+* {
+  font-family: "itim";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-family: "Irish Grover";
+  font-size: 30px;
+  text-shadow: 0 3px 4px #7a74ef;
+  color: transparent;
+  background-color: #1633a4;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+header {
+  padding: 0.5rem 2rem;
+}
+
+header > nav > ul > li > a {
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: var(--bg-button);
+  color: white !important ;
+  font-size: 16px;
+  text-shadow:
+    -1px -1px 0 rgba(0, 0, 0, 0.4),
+    1px -1px 0 rgba(0, 0, 0, 0.4),
+    -1px 1px 0 rgba(0, 0, 0, 0.4),
+    1px 1px 0 rgba(0, 0, 0, 0.4),
+    0 2px 4px black;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.29);
+  font-weight: 500;
+}
+
+#btn-connect{
+
+background-color: blue;
+
+}
