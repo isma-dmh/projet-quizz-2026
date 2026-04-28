@@ -3,17 +3,23 @@ import { NavLink } from "react-router-dom";
 export const Header = () => {
   return (
     <header className="flex justify-between items-center ">
-      <h2 className="logo">CFI-QUIZZ</h2>
+      <NavLink to={"/"} >
+        <h2 className="logo">CFI-QUIZZ</h2>
+      </NavLink>
       <nav>
         <ul className="flex gap-4">
-          <li  >
-            <NavLink to="/">ACCUEIL</NavLink>
+          <li>
+            <NavLink className="boutton" to="/">
+              ACCUEIL
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/">S'INSCRIRE</NavLink>
+            <NavLink className="boutton" to="/">
+              S'INSCRIRE
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/" id="btn-connect">
+            <NavLink to="/" className=" boutton btn-connect">
               SE CONNECTER
             </NavLink>
           </li>

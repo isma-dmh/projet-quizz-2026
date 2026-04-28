@@ -18,31 +18,17 @@ body {
 .logo {
   font-family: "Irish Grover";
   font-size: 20px;
-  text-shadow: 0 3px 4px #7a74ef;
-  color: transparent;
-  background-color: #1633a4;
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 0.5px white;
-  background-clip: text;
-}
-
-.title {
-  text-align: center;
-  font-size: 25px;
+  font-weight: bold;
+  color: #1633a4;
   text-shadow:
-    -2px -2px 0 var(--color-primary),
-    2px -2px 0 var(--color-primary),
-    -2px 2px 0 var(--color-primary),
-    2px 2px 0 var(--color-primary);
-  font-weight: 600;
-  letter-spacing: 3px;
+    -0.5px -0.5px 0 white,
+     0.5px -0.5px 0 white,
+    -0.5px  0.5px 0 white,
+     0.5px  0.5px 0 white,
+    0 3px 4px #7a74ef;
 }
 
-header {
-  padding: 0.5rem 1rem;
-}
-
-header > nav > ul > li > a {
+ .boutton {
   padding: 5px 10px;
   border-radius: 10px;
   background-color: var(--color-primary);
@@ -58,7 +44,42 @@ header > nav > ul > li > a {
   font-weight: 500;
 }
 
-#btn-connect {
+.title {
+  text-align: center;
+  font-size: 25px;
+  text-shadow:
+    -2px -2px 0 var(--color-primary),
+    2px -2px 0 var(--color-primary),
+    -2px 2px 0 var(--color-primary),
+    2px 2px 0 var(--color-primary);
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.img-mode {
+  width: 200px;
+  border-radius: 20px;
+}
+
+.img-mode.normal {
+  box-shadow: 0 4px 20px 0 #04470b;
+}
+
+.img-mode.chrono {
+  box-shadow: 0 4px 20px 0 #580101;
+}
+
+.img-mode.entrainement {
+  box-shadow: 0 4px 20px 0 #012d6c;
+}
+
+header {
+  padding: 0.5rem 1rem;
+}
+
+
+
+.btn-connect {
   background-color: blue;
 }
 
