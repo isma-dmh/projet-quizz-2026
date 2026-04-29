@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Irish+Grover&family=Itim&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&family=Righteous&family=Share+Tech+Mono&family=Syne:wght@400..800&display=swap");
+
+:root {
+  --color-primary: #c1cbf2;
+}
+
+body {
+  background-color: whitesmoke;
+  overflow-x: hidden;
+}
+
+* {
+  font-family: "itim";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-family: "Irish Grover";
+  font-size: 20px;
+  font-weight: bold;
+  color: #1633a4;
+  text-shadow:
+    -0.5px -0.5px 0 white,
+    0.5px -0.5px 0 white,
+    -0.5px 0.5px 0 white,
+    0.5px 0.5px 0 white,
+    0 3px 4px #7a74ef;
+}
+
+.boutton {
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: var(--color-primary);
+  color: white !important ;
+  font-size: 10px;
+  text-shadow:
+    -1px -1px 0 rgba(0, 0, 0, 0.4),
+    1px -1px 0 rgba(0, 0, 0, 0.4),
+    -1px 1px 0 rgba(0, 0, 0, 0.4),
+    1px 1px 0 rgba(0, 0, 0, 0.4),
+    0 2px 4px black;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.29);
+  font-weight: 500;
+}
+
+.btn-connect {
+  background-color: blue;
+}
+
+.title {
+  text-align: center;
+  font-size: 25px;
+  text-shadow:
+    -2px -2px 0 var(--color-primary),
+    2px -2px 0 var(--color-primary),
+    -2px 2px 0 var(--color-primary),
+    2px 2px 0 var(--color-primary);
+  font-weight: 600;
+  letter-spacing: 3px;
+  padding: 0 1rem;
+}
+
+.img-mode {
+  width: 200px;
+  border-radius: 20px;
+}
+
+.img-mode.normal {
+  box-shadow: 0 4px 20px 0 #04470b;
+}
+
+.img-mode.chrono {
+  box-shadow: 0 4px 20px 0 #580101;
+}
+
+.img-mode.entrainement {
+  box-shadow: 0 4px 20px 0 #012d6c;
+}
+
+header {
+  padding: 0.5rem 1rem;
+}
+
+header > nav > button {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  .barre {
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    border-radius: 2px;
+  }
+  cursor: pointer;
+}
+
+#croix {
+  width: 30px;
+  
+}
+
+footer {
+  border: none;
+  padding: 0rem 2rem;
+  background-color: var(--color-primary);
+  box-shadow: 0 0 5px 5px var(--color-primary);
+}
+
+footer > p {
+  -webkit-text-stroke: 0.2px white;
+}
+
+@media (max-width: 700px) {
+  header > nav {
+    button {
+      display: flex;
+    }
+
+    ul {
+      background-color: rgba(255, 255, 255, 0.731);
+      position: fixed;
+      top: 0;
+      right: -100%;
+      z-index: 999;
+      width: 70%;
+      height: 100dvh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      transition: 0.2s ease-in-out;
+    }
+    
+  }
+
+  header > nav#open {
+    ul {
+      right: 0;
+    }
+
+    button{
+
+      position: fixed;
+      top: 0.5rem;
+      right: 0.5rem;
+      z-index: 1000;
+
+    }
+  }
+
+  @media(max-width: 500px){
+
+    footer{
+
+      display: flex;
+      flex-direction: column;
+    }
+
+  }
+
+}
