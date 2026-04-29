@@ -6,7 +6,7 @@ input {
   padding: 0 1rem;
 }
 
-.bloc-formulaire  p {
+.bloc-formulaire p {
   text-align: center;
   color: rgb(183, 5, 5);
   font-weight: bold;
@@ -86,4 +86,47 @@ input {
     min-width: 100px;
     min-height: 30px;
   }
+}
+
+@media (max-width: 900px) {
+  .img-container {
+    display: none;
+  }
+
+  .bloc-formulaire > .formulaire {
+    h2 {
+      border-top-left-radius: 20px;
+    }
+
+    form {
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+
+    .bloc-formulaire{
+
+        width: 100%;
+
+        .formulaire{
+
+            h2,form{
+
+                border-radius: 0;
+
+            }
+
+        }
+
+    }
+
+    #nom-pseudo{
+
+        flex-direction: column;
+
+    }
+
 }
