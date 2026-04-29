@@ -55,84 +55,98 @@ export const Inscription = () => {
       check: true,
     });
 
-    if(!isValid) return;
-      
-
+    if (!isValid) return;
   };
 
   return (
     <div className="bloc-formulaire">
-      <img src="" alt="" className="img-formulaire" />
+      <div className="img-container"></div>
       <div className="formulaire">
         <h2>S'INSCRIRE</h2>
         <form action="">
-          <label htmlFor="nom">NOM</label>
-          <input
-            onChange={handleChange}
-            onBlur={handleTouched}
-            type="text"
-            name="nom"
-            value={form.nom}
-          />
-          <label htmlFor="pseudo">PSEUDO</label>
-          <input
-            onChange={handleChange}
-            onBlur={handleTouched}
-            type="text"
-            name="pseudo"
-            value={form.pseudo}
-          />
-          <label htmlFor="email">EMAIL</label>
-          <input
-            onChange={handleChange}
-            onBlur={handleTouched}
-            type="email"
-            name="email"
-            value={form.email}
-          />
-          <label htmlFor="mdp">MOT DE PASSE</label>
-          <input
-            onChange={handleChange}
-            onBlur={handleTouched}
-            type="password"
-            name="mdp"
-            value={form.mdp}
-          />
-          <label htmlFor="mdp2">CONFIRMER MOT DE PASSE</label>
-          <input
-            onChange={handleChange}
-            onBlur={handleTouched}
-            type="password"
-            name="mdp2"
-            value={form.mdp2}
-          />
-          <label htmlFor="check">J'ACCEPTE LES CONDITIONS D'UTILISATIONS</label>
-          <input
-            onChange={handleChange}
-            onBlur={handleTouched}
-            type="checkbox"
-            name="check"
-            value={form.check}
-          />
-
-          {touched.nom && form.nom.length === 0 && (
-            <p>Veuillez introduire votre nom ! </p>
-          )}
-          {touched.pseudo && form.pseudo.length === 0 && (
-            <p>Veuillez introduire votre pseudo ! </p>
-          )}
-          {touched.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) && (
-            <p>Veuillez introduire une adresse email valide ! </p>
-          )}
-          {touched.mdp && !/\d/.test(form.mdp) && (
-            <p>Le mot de passe doit contenir au moins un chiffre !</p>
-          )}
-          {touched.mdp && form.mdp.length < 8 && (
-            <p>Le mot de passe doit contenir au moins 8 caracteres </p>
-          )}
-          {touched.mdp2 && form.mdp2 !== form.mdp && (
-            <p>Les mots de passe doivent etre identique </p>
-          )}
+          <div id="nom-pseudo">
+            <div className="bloc-input">
+              <label htmlFor="nom">NOM</label>
+              <input
+                onChange={handleChange}
+                onBlur={handleTouched}
+                type="text"
+                name="nom"
+                value={form.nom}
+              />
+              {touched.nom && form.nom.length === 0 && (
+                <p>Veuillez introduire votre nom ! </p>
+              )}
+            </div>
+            <div className="bloc-input">
+              <label htmlFor="pseudo">PSEUDO</label>
+              <input
+                onChange={handleChange}
+                onBlur={handleTouched}
+                type="text"
+                name="pseudo"
+                value={form.pseudo}
+              />
+              {touched.pseudo && form.pseudo.length === 0 && (
+                <p>Veuillez introduire votre pseudo ! </p>
+              )}
+            </div>
+          </div>
+          <div className="bloc-input">
+            <label htmlFor="email">EMAIL</label>
+            <input
+              onChange={handleChange}
+              onBlur={handleTouched}
+              type="email"
+              name="email"
+              value={form.email}
+            />
+            {touched.email &&
+              !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) && (
+                <p>Veuillez introduire une adresse email valide ! </p>
+              )}
+          </div>
+          <div className="bloc-input">
+            <label htmlFor="mdp">MOT DE PASSE</label>
+            <input
+              onChange={handleChange}
+              onBlur={handleTouched}
+              type="password"
+              name="mdp"
+              value={form.mdp}
+            />
+            {touched.mdp && !/\d/.test(form.mdp) && (
+              <p>Le mot de passe doit contenir au moins un chiffre !</p>
+            )}
+            {touched.mdp && form.mdp.length < 8 && (
+              <p>Le mot de passe doit contenir au moins 8 caracteres </p>
+            )}
+          </div>
+          <div className="bloc-input">
+            <label htmlFor="mdp2">CONFIRMER MOT DE PASSE</label>
+            <input
+              onChange={handleChange}
+              onBlur={handleTouched}
+              type="password"
+              name="mdp2"
+              value={form.mdp2}
+            />
+            {touched.mdp2 && form.mdp2 !== form.mdp && (
+              <p>Les mots de passe doivent etre identique </p>
+            )}
+          </div>
+          <div className="bloc-input checkbox ">
+            <input
+              onChange={handleChange}
+              onBlur={handleTouched}
+              type="checkbox"
+              name="check"
+              value={form.check}
+            />
+            <label htmlFor="check">
+              J'ACCEPTE LES CONDITIONS D'UTILISATIONS
+            </label>
+          </div>
 
           {touched.check && !form.check && (
             <p>Veuillez accepter les conditions d'utilisation </p>

@@ -1,6 +1,9 @@
 import { CardAccueil } from "../components/CardAccueil";
 import "../assets/styles/home.css";
 import { Link } from "react-router-dom";
+import normal from "../assets/images/normal.png";
+import chrono from "../assets/images/chrono.png";
+import entrainement from "../assets/images/entrainement.png";
 
 const legend = {
   normal: "RÉPONDEZ AUX QESTIONS A VOTRE RYTHME ET PROGRSSEZ SEREINEMENT !",
@@ -14,9 +17,9 @@ export const Home = () => {
     <div id="home" className="flex flex-col gap-9">
       <h1 className="title">DÉCOUVREZ NOS QUIZ DÉMOGRAPHIQUE</h1>
       <div id="cards-accueil" className="flex justify-around gap-5">
-        <CardAccueil source={"normal"} legend={legend.normal} />
-        <CardAccueil source={"chrono"} legend={legend.chrono} />
-        <CardAccueil source={"entrainement"} legend={legend.entrainement} />
+        <CardAccueil nom={"normal"} source={normal} legend={legend.normal} />
+        <CardAccueil nom={"chrono"} source={chrono} legend={legend.chrono} />
+        <CardAccueil nom={"entrainement"} source={entrainement} legend={legend.entrainement} />
       </div>
       <div id="buttons-home" className="flex justify-evenly">
         <Link to={"/inscription"} className="boutton">
