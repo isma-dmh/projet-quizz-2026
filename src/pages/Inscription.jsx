@@ -45,7 +45,7 @@ export const Inscription = () => {
     setTouched({ ...touched, [name]: true });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setTouched({
       nom: true,
       pseudo: true,
@@ -56,6 +56,22 @@ export const Inscription = () => {
     });
 
     if (!isValid) return;
+
+    try {
+      const response = await fetch("http://localhost/back-quizz/inscription.php", {
+        method:"POST", 
+        headers: {"Content-Type": "application/json" },
+        body: JSON.stringify(form)
+
+      });
+      
+      const data = await response.json();
+      console.log(data);
+      
+
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
