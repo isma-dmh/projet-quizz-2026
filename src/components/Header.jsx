@@ -31,7 +31,7 @@ export const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="boutton" to="/">
+            <NavLink className="boutton" to="/inscription">
               S'INSCRIRE
             </NavLink>
           </li>
