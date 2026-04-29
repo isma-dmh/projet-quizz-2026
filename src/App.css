@@ -6,6 +6,7 @@
 
 body {
   background-color: whitesmoke;
+  overflow-x: hidden;
 }
 
 * {
@@ -22,13 +23,13 @@ body {
   color: #1633a4;
   text-shadow:
     -0.5px -0.5px 0 white,
-     0.5px -0.5px 0 white,
-    -0.5px  0.5px 0 white,
-     0.5px  0.5px 0 white,
+    0.5px -0.5px 0 white,
+    -0.5px 0.5px 0 white,
+    0.5px 0.5px 0 white,
     0 3px 4px #7a74ef;
 }
 
- .boutton {
+.boutton {
   padding: 5px 10px;
   border-radius: 10px;
   background-color: var(--color-primary);
@@ -44,6 +45,10 @@ body {
   font-weight: 500;
 }
 
+.btn-connect {
+  background-color: blue;
+}
+
 .title {
   text-align: center;
   font-size: 25px;
@@ -54,6 +59,7 @@ body {
     2px 2px 0 var(--color-primary);
   font-weight: 600;
   letter-spacing: 3px;
+  padding: 0 1rem;
 }
 
 .img-mode {
@@ -77,10 +83,22 @@ header {
   padding: 0.5rem 1rem;
 }
 
+header > nav > button {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  .barre {
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    border-radius: 2px;
+  }
+  cursor: pointer;
+}
 
-
-.btn-connect {
-  background-color: blue;
+#croix {
+  width: 30px;
+  
 }
 
 footer {
@@ -92,4 +110,54 @@ footer {
 
 footer > p {
   -webkit-text-stroke: 0.2px white;
+}
+
+@media (max-width: 700px) {
+  header > nav {
+    button {
+      display: flex;
+    }
+
+    ul {
+      background-color: rgba(255, 255, 255, 0.731);
+      position: fixed;
+      top: 0;
+      right: -100%;
+      z-index: 999;
+      width: 70%;
+      height: 100dvh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      transition: 0.2s ease-in-out;
+    }
+    
+  }
+
+  header > nav#open {
+    ul {
+      right: 0;
+    }
+
+    button{
+
+      position: fixed;
+      top: 0.5rem;
+      right: 0.5rem;
+      z-index: 1000;
+
+    }
+  }
+
+  @media(max-width: 500px){
+
+    footer{
+
+      display: flex;
+      flex-direction: column;
+    }
+
+  }
+
 }
