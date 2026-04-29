@@ -16,6 +16,10 @@ body {
   box-sizing: border-box;
 }
 
+button {
+  cursor: pointer;
+}
+
 .logo {
   font-family: "Irish Grover";
   font-size: 20px;

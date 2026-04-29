@@ -1,5 +1,6 @@
 import "../assets/styles/connexion.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Connexion = () => {
   const [form, setForm] = useState({
@@ -7,9 +8,34 @@ export const Connexion = () => {
     mdp: "",
   });
 
+  const [check, setCheck] = useState(false);
+
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
+  };
+
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost/back-quizz/connexion.php",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        },
+      );
+
+      const data = await response.json();
+
+      data.success ? navigate("/") : setCheck(true);
+      
+
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -22,9 +48,9 @@ export const Connexion = () => {
             <label htmlFor="email">PSEUDO OU EMAIL</label>
             <input
               onChange={handleChange}
-              type="email"
-              name="email"
-              value={form.email}
+              type="text"
+              name="pseudoEmail"
+              value={form.pseudoEmail}
             />
           </div>
           <div className="bloc-input">
@@ -37,7 +63,13 @@ export const Connexion = () => {
             />
           </div>
 
-          <button type="button" className=" boutton btn-connect">
+          {check && <p>Pseudo ou mot de passe incorrect </p> }
+
+          <button
+            onClick={handleSubmit}
+            type="button"
+            className=" boutton btn-connect"
+          >
             SE CONNECTER
           </button>
         </form>
