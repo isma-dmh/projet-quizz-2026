@@ -55,7 +55,7 @@ export const Inscription = () => {
       check: true,
     });
 
-    if (!isValid) return;
+    if (!isValid()) return;
 
     try {
       const response = await fetch("http://localhost/back-quizz/inscription.php", {
@@ -64,7 +64,7 @@ export const Inscription = () => {
         body: JSON.stringify(form)
 
       });
-      
+
       const data = await response.json();
       console.log(data);
       

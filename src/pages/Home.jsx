@@ -25,7 +25,7 @@ export const Home = () => {
         <Link to={"/inscription"} className="boutton">
           S'INSCRIRE
         </Link>
-        <Link to={"/"} className=" boutton btn-connect">
+        <Link to={"/connexion"} className=" boutton btn-connect">
           SE CONNECTER
         </Link>
       </div>

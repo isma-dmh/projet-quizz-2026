@@ -40,7 +40,7 @@ export const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/" className=" boutton btn-connect">
+            <NavLink to="/connexion" className=" boutton btn-connect">
               SE CONNECTER
             </NavLink>
           </li>
