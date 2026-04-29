@@ -1,19 +1,23 @@
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
 
+  const location = useLocation();
+
+  useEffect(() => {
+    const timer = setTimeout(() => setOpen(false), 0);
+    return () => clearTimeout(timer);
+  }, [location]);
+  
   return (
     <header className="flex justify-between items-center ">
       <NavLink to={"/"}>
         <h2 className="logo">CFI-QUIZZ</h2>
       </NavLink>
       <nav id={open ? "open" : ""}>
-        <button
-          onClick={() => setOpen(!open)}
-          type="button"
-        >
+        <button onClick={() => setOpen(!open)} type="button">
           {open ? (
             <img src="./src/assets/images/cross.svg" id="croix" />
           ) : (
@@ -31,7 +35,7 @@ export const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="boutton" to="/">
+            <NavLink className="boutton" to="/inscription">
               S'INSCRIRE
             </NavLink>
           </li>

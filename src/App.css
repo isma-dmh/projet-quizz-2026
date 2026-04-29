@@ -81,6 +81,8 @@ body {
 
 header {
   padding: 0.5rem 1rem;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.269);
+  background-color: rgb(241, 244, 249);
 }
 
 header > nav > button {
@@ -98,7 +100,6 @@ header > nav > button {
 
 #croix {
   width: 30px;
-  
 }
 
 footer {
@@ -109,7 +110,12 @@ footer {
 }
 
 footer > p {
-  -webkit-text-stroke: 0.2px white;
+  text-shadow:
+    -0.5px -0.5px 0 white,
+    0.5px -0.5px 0 white,
+    -0.5px 0.5px 0 white,
+    0.5px 0.5px 0 white,
+    0 3px 4px black;
 }
 
 @media (max-width: 700px) {
@@ -132,7 +138,6 @@ footer > p {
       gap: 2rem;
       transition: 0.2s ease-in-out;
     }
-    
   }
 
   header > nav#open {
@@ -140,24 +145,18 @@ footer > p {
       right: 0;
     }
 
-    button{
-
+    button {
       position: fixed;
       top: 0.5rem;
       right: 0.5rem;
       z-index: 1000;
-
     }
   }
 
-  @media(max-width: 500px){
-
-    footer{
-
+  @media (max-width: 500px) {
+    footer {
       display: flex;
       flex-direction: column;
     }
-
   }
-
 }
