@@ -20,7 +20,7 @@ input {
   padding-bottom: 2rem;
 }
 
-.bloc-formulaire > .img-container {
+.bloc-formulaire.inscription > .img-container {
   background-image: url("../images/inscription.png");
   background-size: cover;
   background-repeat: no-repeat;

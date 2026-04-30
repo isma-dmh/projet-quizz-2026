@@ -75,7 +75,7 @@ export const Inscription = () => {
   };
 
   return (
-    <div className="bloc-formulaire">
+    <div className="bloc-formulaire inscription">
       <div className="img-container"></div>
       <div className="formulaire">
         <h2>S'INSCRIRE</h2>

@@ -1,51 +1,32 @@
-#home{
-
-padding: 1rem 0;
-
+#home {
+  padding: 1rem 0;
 }
 
-.card-accueil{
-
-width: 200px;
-
+#cards-accueil > .card {
+  width: 200px;
 }
 
-.card-accueil > p {
-
-text-align: center;
-font-size: 14px;
-
+#cards-accueil > .card > p {
+  text-align: center;
+  font-size: 14px;
 }
-
 
 #buttons-home > a {
-
-    font-size: 15px;
-
+  font-size: 15px;
 }
-
 
 @media (max-width: 700px) {
-
-    #cards-accueil{
-
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-
-    }
-
+  #cards-accueil {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
 }
 
-@media (max-width:500px){
-
-    #buttons-home{
-
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-
-    }
-
+@media (max-width: 500px) {
+  #buttons-home {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 }
-

@@ -31,15 +31,13 @@ export const Connexion = () => {
       const data = await response.json();
 
       data.success ? navigate("/") : setCheck(true);
-      
-
     } catch (err) {
       console.log(err);
     }
   };
 
   return (
-    <div className="bloc-formulaire">
+    <div className="bloc-formulaire connexion ">
       <div className="img-container"></div>
       <div className="formulaire">
         <h2>SE CONNECTER</h2>
@@ -63,7 +61,7 @@ export const Connexion = () => {
             />
           </div>
 
-          {check && <p>Pseudo ou mot de passe incorrect </p> }
+          {check && <p>Pseudo ou mot de passe incorrect </p>}
 
           <button
             onClick={handleSubmit}

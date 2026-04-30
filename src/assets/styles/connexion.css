@@ -6,6 +6,12 @@ input {
   padding: 0 1rem;
 }
 
+.bloc-formulaire p {
+  text-align: center;
+  color: rgb(183, 5, 5);
+  font-weight: bold;
+}
+
 .bloc-formulaire {
   display: flex;
   width: 85%;
@@ -13,7 +19,7 @@ input {
   padding-bottom: 2rem;
 }
 
-.bloc-formulaire > .img-container {
+.bloc-formulaire.connexion > .img-container {
   background-image: url("../images/connexion.png");
   background-size: cover;
   background-repeat: no-repeat;

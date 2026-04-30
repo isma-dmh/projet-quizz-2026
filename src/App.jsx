@@ -5,6 +5,7 @@ import { Home } from "./pages/Home";
 import { Footer } from "./components/Footer";
 import { Inscription } from "./pages/Inscription";
 import { Connexion } from "./pages/Connexion";
+import { Mode } from "./pages/Mode";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/inscription" element={<Inscription />} />
           <Route path="/connexion" element={<Connexion />} />
+          <Route path="/mode" element={<Mode />} />
         </Routes>
       </main>
       <Footer />
