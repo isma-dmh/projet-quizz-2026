@@ -32,6 +32,7 @@ export const Connexion = () => {
 
       if (data.successConnexion) {
         localStorage.setItem("pseudo",data.pseudo);
+        localStorage.setItem("connected",true);
         navigate("/mode");
       } else {
         setCheck(true);

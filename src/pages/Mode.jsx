@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export const Mode = () => {
   const [user, setUser] = useState(
-    localStorage.pseudo ? localStorage.pseudo.toUpperCase() : "JOUEUR",
+    localStorage.getItem("pseudo") ? localStorage.getItem("pseudo").toUpperCase() : "JOUEUR",
   );
 
   return (
