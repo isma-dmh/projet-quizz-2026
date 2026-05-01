@@ -1,5 +1,6 @@
 import "../assets/styles/inscription.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Inscription = () => {
   const [form, setForm] = useState({
@@ -20,10 +21,14 @@ export const Inscription = () => {
     check: false,
   });
 
+  const [inscription, setInscription] = useState(false);
+
+  const navigate = useNavigate();
+
   const isValid = () => {
     return (
-      form.nom > 0 &&
-      form.pseudo > 0 &&
+      form.nom.length > 0 &&
+      form.pseudo.length > 0 &&
       /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) &&
       /\d/.test(form.mdp) &&
       form.mdp2 === form.mdp &&
@@ -58,17 +63,29 @@ export const Inscription = () => {
     if (!isValid()) return;
 
     try {
-      const response = await fetch("http://localhost/back-quizz/inscription.php", {
-        method:"POST", 
-        headers: {"Content-Type": "application/json" },
-        body: JSON.stringify(form)
-
-      });
+      const response = await fetch(
+        "http://localhost/back-quizz/inscription.php",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        },
+      );
 
       const data = await response.json();
-      console.log(data);
-      
 
+      console.log(data);
+
+      if (data.successInscription) {
+        setInscription(true);
+        localStorage.setItem("connected",true);
+        localStorage.setItem("pseudo",form.pseudo);
+        setTimeout(() => {
+          navigate("/mode");
+        }, 2000);
+      } else {
+        console.log(data.successInscription);
+      }
     } catch (err) {
       console.log(err);
     }
@@ -167,6 +184,8 @@ export const Inscription = () => {
           {touched.check && !form.check && (
             <p>Veuillez accepter les conditions d'utilisation </p>
           )}
+
+          {inscription && <p style={{ color: "green" }}>Inscription réussi</p>}
 
           <button onClick={handleSubmit} type="button" className="boutton">
             S'INSCRIRE

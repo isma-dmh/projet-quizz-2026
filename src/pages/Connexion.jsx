@@ -30,7 +30,12 @@ export const Connexion = () => {
 
       const data = await response.json();
 
-      data.success ? navigate("/") : setCheck(true);
+      if (data.successConnexion) {
+        localStorage.setItem("pseudo",data.pseudo);
+        navigate("/mode");
+      } else {
+        setCheck(true);
+      }
     } catch (err) {
       console.log(err);
     }
