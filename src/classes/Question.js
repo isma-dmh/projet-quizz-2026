@@ -2,20 +2,38 @@ import { Pays } from "./Pays";
 
 export class Question extends Pays {
   static TYPES = [
-    { id: "nom", question: "Quel est le nom de ce pays ?" },
-    { id: "alpha", question: "Quel est le code alpha 3 de ce pays ?" },
-    { id: "capital", question: "Quel est la capital de ce pays ?" },
-    { id: "continent", question: "Dans quel continent se trouve ce pays ?" },
+    { id: "nom", jsonId: "name", question: "Quel est le nom de ce pays ?" },
+    {
+      id: "alpha",
+      jsonId: "alpha_3_code",
+      question: "Quel est le code alpha 3 de ce pays ?",
+    },
+    {
+      id: "capital",
+      jsonId: "capital",
+      question: "Quelle est la capitale de ce pays ?",
+    },
+    {
+      id: "continent",
+      jsonId: "region",
+      question: "Dans quel continent se trouve ce pays ?",
+    },
     {
       id: "population",
-      question: "Quel est la densité de population de ce pays ?",
+      jsonId: "population",
+      question: "Quelle est la densité de population de ce pays ?",
     },
-    { id: "borders", question: "Quels sont les pays limitrophe de ce pays ?" },
+    {
+      id: "borders",
+      jsonId: "borders",
+      question: "Quels sont les pays limitrophes de ce pays ?",
+    },
   ];
 
   constructor(pays, tousLesPays) {
     super(pays);
-    this.type = Question.TYPES[Math.floor(Math.random() * Question.TYPES.length)];
+    this.type =
+      Question.TYPES[Math.floor(Math.random() * Question.TYPES.length)];
     this.choix = this.#genererChoix(tousLesPays);
   }
 
@@ -28,11 +46,19 @@ export class Question extends Pays {
   }
 
   #genererChoix(tousLesPays) {
-    const mauvaisChoix = tousLesPays
+    const autresPays = tousLesPays
       .filter((p) => p.nom !== this.nom)
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 3)
-      .map((p) => p[this.type.id]);
+      .sort(() => Math.random() - 0.5);
+
+    const mauvaisChoix = [];
+
+    for (const p of autresPays) {
+      const valeur = p[this.type.jsonId];
+      if (valeur !== this.bonneReponse && !mauvaisChoix.includes(valeur)) {
+        mauvaisChoix.push(valeur);
+      }
+      if (mauvaisChoix.length === 3) break;
+    }
 
     return [...mauvaisChoix, this.bonneReponse].sort(() => Math.random() - 0.5);
   }
