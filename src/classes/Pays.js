@@ -1,12 +1,12 @@
 export class Pays {
-  constructor(nom, alpha, capital, continent, population, flag, borders) {
-    this.nom = nom;
-    this.alpha = alpha;
-    this.capital = capital;
-    this.continent = continent;
-    this.population = population;
-    this.flag = flag;
-    this.borders = borders;
+  constructor(pays) {
+    this.nom = pays.name;
+    this.alpha = pays.alpha_3_code;
+    this.capital = pays.capital;
+    this.continent = pays.region;
+    this.population = pays.population;
+    this.flag = pays.flag;
+    this.borders = pays.borders;
   }
 
 }
