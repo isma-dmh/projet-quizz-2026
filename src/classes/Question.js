@@ -60,7 +60,7 @@ export class Question extends Pays {
       if (mauvaisChoix.length === 3) break;
     }
 
-    return [...mauvaisChoix, this.bonneReponse].sort(() => Math.random() - 0.5);
+        return [...mauvaisChoix, this.bonneReponse].sort(() => Math.random() - 0.5);
   }
 
   verifier(reponse) {
