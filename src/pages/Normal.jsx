@@ -2,6 +2,7 @@ import { Jeu } from "../components/Jeu";
 import { PaysContext } from "../context/PaysContext";
 import { useContext, useState } from "react";
 import { ResultatNormal } from "../components/ResultatNormal";
+import "../assets/styles/jeux.css"
 
 export const Normal = () => {
   const { pays, loading } = useContext(PaysContext);
@@ -14,7 +15,7 @@ export const Normal = () => {
 
   return (
     <div className="bloc-jeu jeu-normal">
-      <p>{score}</p>
+      <p className="score" >{score}</p>
       <Jeu
         pays={pays}
         score={score}
