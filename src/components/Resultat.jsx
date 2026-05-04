@@ -1,4 +1,4 @@
-export const Resultat = ({ mode, score, numeroQuestion }) => {
+export const Resultat = ({score, numeroQuestion }) => {
   return (
     <div>
       <p>Nombre de question répondu: {numeroQuestion - 1}</p>
