@@ -19,7 +19,7 @@ export const Mode = () => {
         <Link to={"/mode-normal"}>
           <Card nom={"normal"} source={normal} legend={"NORMAL"} />
         </Link>
-        <Link to={"/mode"}>
+        <Link to={"/mode-chrono"}>
           <Card nom={"chrono"} source={chrono} legend={"CHRONO"} />
         </Link>
         <Link to={"/mode"}>
