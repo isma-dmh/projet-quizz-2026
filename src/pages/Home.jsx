@@ -9,7 +9,7 @@ import { isConnected } from "../assets/functions/connected";
 const legend = {
   normal: "RÉPONDEZ AUX QESTIONS A VOTRE RYTHME ET PROGRSSEZ SEREINEMENT !",
   chrono:
-    "RÉPONDEZ LE PLUS VITE POSSIBLE ET TENTEZ DE BATTRE LE MEILLEUR TEMPS!",
+    "RÉPONDEZ LE PLUS VITE POSSIBLE A UN MAXIMUM DE QUESTIONS !",
   entrainement: "ENTRAINEZ-VOUS, APPRENEZ ET AMÉLIOREZ VOS CONNAISSANCES !",
 };
 
