@@ -9,6 +9,7 @@ import { Mode } from "./pages/Mode";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { isConnected } from "./assets/functions/connected";
 import { Normal } from "./pages/Normal";
+import { Chrono } from "./pages/Chrono";
 import { PaysProvider } from "./context/PaysContext";
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
             }
           >
             <Route path="/mode-normal" element={<Normal />} />
+            <Route path="/mode-chrono" element={<Chrono />} />
           </Route>
         </Routes>
       </main>

@@ -9,6 +9,7 @@ export const Jeu = ({
   setScore,
   numeroQuestion,
   setNumeroQuestion,
+  mode,
 }) => {
   const paysUtilisee = useRef(null);
   const [paysActif, setPaysActif] = useState(
@@ -41,7 +42,7 @@ export const Jeu = ({
 
   return (
     <div className="jeu">
-      <h2>MODE NORMAL</h2>
+      <h2>MODE {mode.toUpperCase()}</h2>
       <img src={paysActif.flag} alt="" width={"200px"} />
       <p>
         Question {numeroQuestion}: {paysActif.intitule}
