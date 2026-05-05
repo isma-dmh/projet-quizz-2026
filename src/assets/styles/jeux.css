@@ -24,6 +24,13 @@
   background: linear-gradient(to bottom, #03430d, #98cc02);
 }
 
+.jeu-chrono{
+
+  background: linear-gradient(to bottom, #F9A403, #640400);
+
+
+}
+
 .score {
   position: absolute;
   top: 13px;
@@ -32,6 +39,15 @@
   padding: 0 10px;
   border-radius: 50%;
   font-size: 1.5rem;
+}
+
+.score.time{
+
+position: absolute;
+top: 13px;
+right: 15px;
+left: auto;
+
 }
 
 .jeu {
