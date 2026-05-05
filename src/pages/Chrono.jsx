@@ -8,7 +8,7 @@ export const Chrono = () => {
   const { pays, loading } = useContext(PaysContext);
   const [score, setScore] = useState(0);
   const [numeroQuestion, setNumeroQuestion] = useState(1);
-  const [time, setTime] = useState(60);
+  const [time, setTime] = useState(10);
 
   useEffect(() => {
     if (loading || time <= 0) return;
@@ -21,7 +21,7 @@ export const Chrono = () => {
   if (loading) return <p>Chargement ... </p>;
 
   if (time === 0)
-    return <Resultat score={score} numeroQuestion={numeroQuestion} />;
+    return <Resultat score={score} numeroQuestion={numeroQuestion} mode={"chrono"} />;
 
   return (
     <div className="bloc-jeu jeu-chrono">

@@ -11,7 +11,7 @@ export const Normal = () => {
 
   if (loading) return <p>Chargement ... </p>;
 
-  if (numeroQuestion > 10) return <Resultat score={score} numeroQuestion={numeroQuestion} />;
+  if (numeroQuestion > 10) return <Resultat score={score} numeroQuestion={numeroQuestion} mode={"normal"} />;
 
   return (
     <div className="bloc-jeu jeu-normal">
