@@ -22,7 +22,7 @@ export const Mode = () => {
         <Link to={"/mode-chrono"}>
           <Card nom={"chrono"} source={chrono} legend={"CHRONO"} />
         </Link>
-        <Link to={"/mode"}>
+        <Link to={"/mode-entrainement"}>
           <Card
             nom={"entrainement"}
             source={entrainement}

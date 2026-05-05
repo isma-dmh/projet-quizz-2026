@@ -10,6 +10,7 @@ import { ProtectedRoute } from "./components/ProtectedRoute";
 import { isConnected } from "./assets/functions/connected";
 import { Normal } from "./pages/Normal";
 import { Chrono } from "./pages/Chrono";
+import { Entrainement } from "./pages/Entrainement";
 import { PaysProvider } from "./context/PaysContext";
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           >
             <Route path="/mode-normal" element={<Normal />} />
             <Route path="/mode-chrono" element={<Chrono />} />
+            <Route path="/mode-entrainement" element={<Entrainement />} />
           </Route>
         </Routes>
       </main>
