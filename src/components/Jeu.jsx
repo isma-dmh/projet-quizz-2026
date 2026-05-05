@@ -28,6 +28,11 @@ export const Jeu = ({
     if (c == paysActif.bonneReponse) setScore(score + 1);
 
     setTimeout(() => {
+      
+      if (paysUtilisee.current.length === pays.length) {
+        paysUtilisee.current = [];
+      }
+
       const paysDisponibles = pays.filter(
         (p) => !paysUtilisee.current.some((q) => q.nom === p.name),
       );
