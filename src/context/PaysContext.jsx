@@ -8,7 +8,7 @@ export const PaysProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchPays = async () => {
-      const response = await fetch("http://localhost/back-quizz/getPays.php");
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/getPays.php`);
       const data = await response.json();
       setPays(data.pays);
       setLoading(false)

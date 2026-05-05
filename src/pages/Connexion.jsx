@@ -20,7 +20,7 @@ export const Connexion = () => {
   const handleSubmit = async () => {
     try {
       const response = await fetch(
-        "http://localhost/back-quizz/connexion.php",
+        `${import.meta.env.VITE_API_URL}/connexion.php`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

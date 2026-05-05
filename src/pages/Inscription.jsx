@@ -64,7 +64,7 @@ export const Inscription = () => {
 
     try {
       const response = await fetch(
-        "http://localhost/back-quizz/inscription.php",
+        `${import.meta.env.VITE_API_URL}/inscription.php`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -78,8 +78,8 @@ export const Inscription = () => {
 
       if (data.successInscription) {
         setInscription(true);
-        localStorage.setItem("connected",true);
-        localStorage.setItem("pseudo",form.pseudo);
+        localStorage.setItem("connected", true);
+        localStorage.setItem("pseudo", form.pseudo);
         setTimeout(() => {
           navigate("/mode");
         }, 2000);
