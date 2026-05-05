@@ -8,7 +8,7 @@ export const Chrono = () => {
   const { pays, loading } = useContext(PaysContext);
   const [score, setScore] = useState(0);
   const [numeroQuestion, setNumeroQuestion] = useState(1);
-  const [time, setTime] = useState(10);
+  const [time, setTime] = useState(60);
 
   useEffect(() => {
     if (loading || time <= 0) return;
