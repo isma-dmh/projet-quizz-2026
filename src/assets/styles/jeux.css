@@ -24,18 +24,51 @@
   background: linear-gradient(to bottom, #03430d, #98cc02);
 }
 
-.jeu-chrono{
-
-  background: linear-gradient(to bottom, #F9A403, #640400);
-
-
+.jeu-chrono {
+  background: linear-gradient(to bottom, #f9a403, #640400);
 }
 
-.jeu-entrainement{
+.jeu-entrainement {
+  background: linear-gradient(to bottom, #012762, #4bc7fb);
+}
 
-  background: linear-gradient(to bottom, #012762, #4BC7FB);
+.resultat {
+  justify-content: space-between;
+  gap: 4rem;
+}
 
+.resultat > h2 {
+  font-size: 1.5rem;
+}
 
+.resultat > p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  padding: 0.5rem 2rem;
+
+  span {
+    background-color: rgba(255, 255, 255, 0.443);
+    padding: 0 10px;
+    border-radius: 5px;
+    width: 80px;
+  }
+}
+
+.resultat > button {
+  background-color: rgba(255, 255, 255, 0.443);
+  padding: 10px 10px;
+  border-radius: 5px;
+  width: 150px;
+  font-size: 1.1rem;
+  align-self: center;
+  text-shadow:
+    -1px -1px 0 rgba(0, 0, 0, 0.4),
+    1px -1px 0 rgba(0, 0, 0, 0.4),
+    -1px 1px 0 rgba(0, 0, 0, 0.4),
+    1px 1px 0 rgba(0, 0, 0, 0.4),
+    0 2px 4px black;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.29);
 }
 
 .score {
@@ -48,13 +81,11 @@
   font-size: 1.5rem;
 }
 
-.score.time{
-
-position: absolute;
-top: 13px;
-right: 15px;
-left: auto;
-
+.score.time {
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  left: auto;
 }
 
 .jeu {
@@ -119,12 +150,9 @@ left: auto;
 }
 
 @media (max-width: 700px) {
-
-    :root{
-
-        font-size: 14px;
-
-    }
+  :root {
+    font-size: 14px;
+  }
 
   .bloc-jeu {
     width: 100%;
@@ -137,8 +165,8 @@ left: auto;
   }
 
   .jeu > .question {
-  font-size: 1.2rem;
-}
+    font-size: 1.2rem;
+  }
 
   .jeu > .liste {
     gap: 1rem 2rem;
@@ -150,5 +178,15 @@ left: auto;
       border-radius: 10px;
       font-size: 1.2rem;
     }
+  }
+
+  .resultat {
+    gap: 3rem;
+  }
+
+  .resultat > p {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 }

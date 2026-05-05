@@ -21,7 +21,7 @@ export const Chrono = () => {
   if (loading) return <p>Chargement ... </p>;
 
   if (time === 0)
-    return <Resultat score={score} numeroQuestion={numeroQuestion} />;
+    return <Resultat score={score} numeroQuestion={numeroQuestion} mode={"chrono"} />;
 
   return (
     <div className="bloc-jeu jeu-chrono">
