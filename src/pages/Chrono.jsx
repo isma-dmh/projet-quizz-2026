@@ -23,9 +23,11 @@ export const Chrono = () => {
     return <ResultatChrono score={score} numeroQuestion={numeroQuestion} />;
 
   return (
-    <div className="bloc-jeu jeu-normal">
-      <p>{score}</p>
-      <p>{time}</p>
+    <div className="bloc-jeu jeu-chrono">
+      <p className="score">{score}</p>
+      <p className="score time" style={{ color: time <= 10 ? "#ff3333" : "" }}>
+        {time}
+      </p>
       <Jeu
         pays={pays}
         score={score}
