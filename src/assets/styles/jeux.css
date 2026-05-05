@@ -31,6 +31,13 @@
 
 }
 
+.jeu-entrainement{
+
+  background: linear-gradient(to bottom, #012762, #4BC7FB);
+
+
+}
+
 .score {
   position: absolute;
   top: 13px;

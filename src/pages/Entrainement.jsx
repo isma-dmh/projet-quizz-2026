@@ -1,7 +1,7 @@
 import { Jeu } from "../components/Jeu";
 import { PaysContext } from "../context/PaysContext";
 import { useContext, useState } from "react";
-import { ResultatEntrainement } from "../components/ResultatEntrainement";
+import "../assets/styles/jeux.css";
 
 export const Entrainement = () => {
    const { pays, loading } = useContext(PaysContext);
@@ -10,11 +10,9 @@ export const Entrainement = () => {
 
   if (loading) return <p>Chargement ... </p>;
 
-  if (numeroQuestion > 10) return <ResultatEntrainement score={score} numeroQuestion={numeroQuestion} />;
-
   return (
-    <div className="bloc-jeu jeu-normal">
-      <p>{score}</p>
+    <div className="bloc-jeu jeu-entrainement">
+      <p className="score" >{score}</p>
       <Jeu
         pays={pays}
         score={score}

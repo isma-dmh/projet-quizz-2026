@@ -2,6 +2,7 @@ import { Jeu } from "../components/Jeu";
 import { PaysContext } from "../context/PaysContext";
 import { useContext, useEffect, useState } from "react";
 import { ResultatChrono } from "../components/ResultatChrono";
+import "../assets/styles/jeux.css";
 
 export const Chrono = () => {
   const { pays, loading } = useContext(PaysContext);
