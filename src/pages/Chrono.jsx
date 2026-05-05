@@ -1,7 +1,7 @@
 import { Jeu } from "../components/Jeu";
 import { PaysContext } from "../context/PaysContext";
 import { useContext, useEffect, useState } from "react";
-import { ResultatChrono } from "../components/ResultatChrono";
+import { Resultat } from "../components/Resultat";
 import "../assets/styles/jeux.css";
 
 export const Chrono = () => {
@@ -21,7 +21,7 @@ export const Chrono = () => {
   if (loading) return <p>Chargement ... </p>;
 
   if (time === 0)
-    return <ResultatChrono score={score} numeroQuestion={numeroQuestion} />;
+    return <Resultat score={score} numeroQuestion={numeroQuestion} />;
 
   return (
     <div className="bloc-jeu jeu-chrono">
