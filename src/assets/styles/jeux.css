@@ -1,0 +1,147 @@
+.bloc-jeu {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  text-shadow:
+    -1px -1px 0 rgba(0, 0, 0, 0.4),
+    1px -1px 0 rgba(0, 0, 0, 0.4),
+    -1px 1px 0 rgba(0, 0, 0, 0.4),
+    1px 1px 0 rgba(0, 0, 0, 0.4),
+    0 2px 4px black;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.29);
+  font-weight: 500;
+  gap: 1rem;
+  position: relative;
+  border-radius: 10px;
+  padding: 1rem 1rem;
+}
+
+.jeu-normal {
+  background: linear-gradient(to bottom, #03430d, #98cc02);
+}
+
+.jeu-chrono{
+
+  background: linear-gradient(to bottom, #F9A403, #640400);
+
+
+}
+
+.score {
+  position: absolute;
+  top: 13px;
+  left: 15px;
+  background-color: rgba(255, 255, 255, 0.263);
+  padding: 0 10px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+.score.time{
+
+position: absolute;
+top: 13px;
+right: 15px;
+left: auto;
+
+}
+
+.jeu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.jeu > h2 {
+  font-size: 1.5rem;
+}
+
+.jeu > img {
+  width: 350px;
+  max-height: 200px;
+  display: block;
+  object-fit: contain;
+}
+
+.jeu > .question {
+  font-size: 1.5rem;
+}
+
+.jeu > .liste {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1.5rem 4rem;
+
+  button {
+    flex: 1 0 calc(50% - 4rem);
+    background-color: rgba(255, 255, 255, 0.263);
+    padding: 0.5rem 0;
+    border-radius: 10px;
+    font-size: 1.2rem;
+
+    li {
+      text-shadow:
+        -1px -1px 0 rgba(0, 0, 0, 0.4),
+        1px -1px 0 rgba(0, 0, 0, 0.4),
+        -1px 1px 0 rgba(0, 0, 0, 0.4),
+        1px 1px 0 rgba(0, 0, 0, 0.4);
+      font-weight: 500;
+      transition: 0.2s;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .bloc-jeu {
+    width: 90%;
+  }
+
+  .jeu {
+    gap: 1rem;
+  }
+
+  .jeu > .liste {
+    gap: 1.5rem 2rem;
+  }
+}
+
+@media (max-width: 700px) {
+
+    :root{
+
+        font-size: 14px;
+
+    }
+
+  .bloc-jeu {
+    width: 100%;
+    border-radius: 0;
+    padding: 1rem 0.5rem;
+  }
+
+  .jeu {
+    gap: 1rem;
+  }
+
+  .jeu > .question {
+  font-size: 1.2rem;
+}
+
+  .jeu > .liste {
+    gap: 1rem 2rem;
+
+    button {
+      flex: 1 0 100%;
+      background-color: rgba(255, 255, 255, 0.263);
+      padding: 0.5rem 0;
+      border-radius: 10px;
+      font-size: 1.2rem;
+    }
+  }
+}

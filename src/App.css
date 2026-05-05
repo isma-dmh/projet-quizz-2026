@@ -93,7 +93,6 @@ header {
   display: none;
   flex-direction: column;
   gap: 4px;
-  position: fixed;
   top: 1rem;
   right: 0.5rem;
   z-index: 1000;
@@ -153,6 +152,13 @@ footer > p {
     ul {
       right: 0;
     }
+
+    #burger{
+
+       position: fixed;
+
+    }
+     
   }
 
   @media (max-width: 500px) {

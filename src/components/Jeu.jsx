@@ -22,12 +22,17 @@ export const Jeu = ({
 
   const [reponseSelectionnee, setReponseSelectionnee] = useState(null);
 
-  const handleClick = (e) => {
-    setReponseSelectionnee(e.target.value);
+  const handleClick = (c) => {
+    setReponseSelectionnee(c);
 
-    if (e.target.value == paysActif.bonneReponse) setScore(score + 1);
+    if (c == paysActif.bonneReponse) setScore(score + 1);
 
     setTimeout(() => {
+      
+      if (paysUtilisee.current.length === pays.length) {
+        paysUtilisee.current = [];
+      }
+
       const paysDisponibles = pays.filter(
         (p) => !paysUtilisee.current.some((q) => q.nom === p.name),
       );
@@ -36,36 +41,39 @@ export const Jeu = ({
       setPaysActif(nouvelleQuestion);
       paysUtilisee.current = [...paysUtilisee.current, nouvelleQuestion];
       setReponseSelectionnee(null);
-      setNumeroQuestion(numeroQuestion + 1);
+      setNumeroQuestion((n) => n + 1);
     }, 1000);
   };
 
   return (
     <div className="jeu">
       <h2>MODE {mode.toUpperCase()}</h2>
-      <img src={paysActif.flag} alt="" width={"200px"} />
-      <p>
-        Question {numeroQuestion}: {paysActif.intitule}
+      <img src={paysActif.flag} alt="" />
+      <p className="question">
+        QUESTION {numeroQuestion}: {paysActif.intitule.toUpperCase()}
       </p>
-      <ul>
+      <ul className="liste">
         {paysActif.choix.map((c, id) => (
-          <li key={id}>
-            <button
-              onClick={handleClick}
-              value={c}
+          <button
+            key={id}
+            onClick={() => handleClick(c)}
+            value={c}
+            disabled={reponseSelectionnee}
+          >
+            <li
               style={{
                 color:
                   reponseSelectionnee == c
                     ? c === paysActif.bonneReponse
-                      ? "green"
-                      : "red"
+                      ? "#c8ff24"
+                      : "#ff3333"
                     : "",
+                transform: reponseSelectionnee == c ? "scale(1.1)" : "",
               }}
-              disabled={reponseSelectionnee}
             >
-              {c}
-            </button>
-          </li>
+              {String(c).toUpperCase()}
+            </li>
+          </button>
         ))}
       </ul>
     </div>
