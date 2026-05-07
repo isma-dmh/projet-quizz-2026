@@ -31,7 +31,7 @@ export const Connexion = () => {
       const data = await response.json();
 
       if (data.successConnexion) {
-        localStorage.setItem("pseudo",data.pseudo);
+        localStorage.setItem("user",JSON.stringify(data.user));
         localStorage.setItem("connected",true);
         navigate("/mode");
       } else {

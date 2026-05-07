@@ -24,6 +24,8 @@ export const Inscription = () => {
 
   const [inscription, setInscription] = useState(false);
 
+  const [error, setError] = useState(false);
+
   const navigate = useNavigate();
 
   const isValid = () => {
@@ -61,6 +63,8 @@ export const Inscription = () => {
       check: true,
     });
 
+    setError(false);
+
     if (!isValid()) return;
 
     try {
@@ -75,17 +79,22 @@ export const Inscription = () => {
 
       const data = await response.json();
 
-      console.log(data);
-
       if (data.successInscription) {
         setInscription(true);
+
+        const user = {
+          pseudo: form.pseudo,
+          score_normal: null,
+          score_chrono: null,
+        };
+
         localStorage.setItem("connected", true);
-        localStorage.setItem("pseudo", form.pseudo);
+        localStorage.setItem("user", JSON.stringify(user));
         setTimeout(() => {
           navigate("/mode");
         }, 2000);
       } else {
-        console.log(data.successInscription);
+        setError(data.erreur);
       }
     } catch (err) {
       console.log(err);
@@ -98,7 +107,9 @@ export const Inscription = () => {
       <div className="formulaire">
         <h2>S'INSCRIRE</h2>
         <form action="">
-          <p className="membre" >Déjà inscrit ? <Link to={"/connexion"} > Se connecter</Link> </p>
+          <p className="membre">
+            Déjà inscrit ? <Link to={"/connexion"}> Se connecter</Link>{" "}
+          </p>
           <div id="nom-pseudo">
             <div className="bloc-input">
               <label htmlFor="nom">NOM</label>
@@ -188,6 +199,7 @@ export const Inscription = () => {
           )}
 
           {inscription && <p style={{ color: "green" }}>Inscription réussi</p>}
+           {error && <p>{error}</p> }
 
           <button onClick={handleSubmit} type="button" className="boutton">
             S'INSCRIRE

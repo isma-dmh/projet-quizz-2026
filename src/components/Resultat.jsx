@@ -1,3 +1,4 @@
+
 export const Resultat = ({score, numeroQuestion, mode}) => {
    
    return <div className={`bloc-jeu jeu-${mode} resultat`} >
