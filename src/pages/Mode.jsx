@@ -9,9 +9,6 @@ export const Mode = () => {
   
   const user = JSON.parse(localStorage.getItem("user"));
 
-  console.log(user);
-  
-
   return (
     <div id="mode" className="flex flex-col gap-9">
       <h2 className="title">BIENVENUE {user.pseudo.toUpperCase()}</h2>
