@@ -8,8 +8,7 @@ import { isConnected } from "../assets/functions/connected";
 
 const legend = {
   normal: "RÉPONDEZ AUX QESTIONS A VOTRE RYTHME ET PROGRSSEZ SEREINEMENT !",
-  chrono:
-    "RÉPONDEZ LE PLUS VITE POSSIBLE A UN MAXIMUM DE QUESTIONS !",
+  chrono: "RÉPONDEZ LE PLUS VITE POSSIBLE A UN MAXIMUM DE QUESTIONS !",
   entrainement: "ENTRAINEZ-VOUS, APPRENEZ ET AMÉLIOREZ VOS CONNAISSANCES !",
 };
 
@@ -18,13 +17,47 @@ export const Home = () => {
     <div id="home" className="flex flex-col gap-9">
       <h1 className="title">DÉCOUVREZ NOS QUIZ DÉMOGRAPHIQUE</h1>
       <div id="cards-accueil" className="flex justify-around gap-5">
-        <Card nom={"normal"} source={normal} legend={legend.normal} />
-        <Card nom={"chrono"} source={chrono} legend={legend.chrono} />
-        <Card
-          nom={"entrainement"}
-          source={entrainement}
-          legend={legend.entrainement}
-        />
+        {isConnected() ? (
+          <>
+            <Link to={"/mode-normal"} >
+              <Card
+                nom={"normal"}
+                source={normal}
+                legend={legend.normal}
+              />{" "}
+            </Link>
+            <Link to={"/mode-chrono"} >
+              <Card nom={"chrono"} source={chrono} legend={legend.chrono} />
+            </Link>
+            <Link to={"/mode-entrainement"} >
+              <Card
+                nom={"entrainement"}
+                source={entrainement}
+                legend={legend.entrainement}
+              />
+            </Link>
+          </>
+        ) : (
+           <>
+            <Link to={"/inscription"} >
+              <Card
+                nom={"normal"}
+                source={normal}
+                legend={legend.normal}
+              />{" "}
+            </Link>
+            <Link to={"/inscription"} >
+              <Card nom={"chrono"} source={chrono} legend={legend.chrono} />
+            </Link>
+            <Link to={"/inscription"} >
+              <Card
+                nom={"entrainement"}
+                source={entrainement}
+                legend={legend.entrainement}
+              />
+            </Link>
+          </>
+        )}
       </div>
       {!isConnected() && (
         <div id="buttons-home" className="flex justify-evenly">

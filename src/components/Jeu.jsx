@@ -28,7 +28,6 @@ export const Jeu = ({
     if (c == paysActif.bonneReponse) setScore(score + 1);
 
     setTimeout(() => {
-      
       if (paysUtilisee.current.length === pays.length) {
         paysUtilisee.current = [];
       }
@@ -59,6 +58,16 @@ export const Jeu = ({
             onClick={() => handleClick(c)}
             value={c}
             disabled={reponseSelectionnee}
+            style={{
+              border:
+                reponseSelectionnee == c
+                  ? c === paysActif.bonneReponse
+                    ? "solid 2px #c8ff24"
+                    : "solid 2px #ff3333"
+                  : reponseSelectionnee && c === paysActif.bonneReponse
+                    ? "solid 2px #c8ff24"
+                    : "",
+            }}
           >
             <li
               style={{
@@ -67,8 +76,9 @@ export const Jeu = ({
                     ? c === paysActif.bonneReponse
                       ? "#c8ff24"
                       : "#ff3333"
-                    : "",
-                transform: reponseSelectionnee == c ? "scale(1.1)" : "",
+                    : reponseSelectionnee && c === paysActif.bonneReponse
+                      ? "#c8ff24"
+                      : "",
               }}
             >
               {String(c).toUpperCase()}

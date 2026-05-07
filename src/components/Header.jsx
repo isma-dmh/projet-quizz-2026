@@ -1,6 +1,7 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { isConnected } from "../assets/functions/connected";
+import cross from "../assets/images/cross.svg";
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
@@ -17,6 +18,7 @@ export const Header = () => {
   const handleDeconnect = () => {
     localStorage.clear();
     navigate("/");
+    window.location.reload();
   };
 
   return (
@@ -25,9 +27,9 @@ export const Header = () => {
         <h2 className="logo">CFI-QUIZZ</h2>
       </NavLink>
       <nav id={open ? "open" : ""}>
-        <button onClick={() => setOpen(!open)} type="button" id="burger" >
+        <button onClick={() => setOpen(!open)} type="button" id="burger">
           {open ? (
-            <img src="./src/assets/images/cross.svg" id="croix" />
+            <img src={cross} id="croix" />
           ) : (
             <>
               <div className="barre"></div>

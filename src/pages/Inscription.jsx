@@ -1,6 +1,7 @@
 import "../assets/styles/inscription.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Inscription = () => {
   const [form, setForm] = useState({
@@ -97,6 +98,7 @@ export const Inscription = () => {
       <div className="formulaire">
         <h2>S'INSCRIRE</h2>
         <form action="">
+          <p className="membre" >Déjà inscrit ? <Link to={"/connexion"} > Se connecter</Link> </p>
           <div id="nom-pseudo">
             <div className="bloc-input">
               <label htmlFor="nom">NOM</label>

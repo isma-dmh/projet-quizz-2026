@@ -2,7 +2,10 @@ import { Pays } from "./Pays";
 
 export class Question extends Pays {
   static TYPES = [
-    { id: "nom", jsonId: "name", question: "Quel est le nom de ce pays ?" },
+    { 
+      id: "nom", 
+      jsonId: "name", 
+      question: "Quel est le nom de ce pays ?" },
     {
       id: "alpha",
       jsonId: "alpha_3_code",
@@ -21,7 +24,7 @@ export class Question extends Pays {
     {
       id: "population",
       jsonId: "population",
-      question: "Quelle est la densité de population de ce pays ?",
+      question: "Quel est le nombre d'habitants de ce pays ?",
     },
     {
       id: "borders",
@@ -53,14 +56,17 @@ export class Question extends Pays {
     const mauvaisChoix = [];
 
     for (const p of autresPays) {
+      p.population = p.population.toLocaleString("fr-FR");
+
       const valeur = p[this.type.jsonId];
       if (valeur !== this.bonneReponse && !mauvaisChoix.includes(valeur)) {
         mauvaisChoix.push(valeur);
       }
+
       if (mauvaisChoix.length === 3) break;
     }
 
-        return [...mauvaisChoix, this.bonneReponse].sort(() => Math.random() - 0.5);
+    return [...mauvaisChoix, this.bonneReponse].sort(() => Math.random() - 0.5);
   }
 
   verifier(reponse) {

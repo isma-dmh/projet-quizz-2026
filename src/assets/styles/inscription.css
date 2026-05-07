@@ -4,6 +4,7 @@ input {
   border-radius: 10px;
   min-height: 40px;
   padding: 0 1rem;
+  font-size: 16px;
 }
 
 .bloc-formulaire p {
@@ -48,6 +49,19 @@ input {
     gap: 2rem;
     background-color: #c0bdff33;
     border-bottom-right-radius: 20px;
+  }
+
+  .membre{
+    color: black;
+
+    a{
+
+      font-weight: lighter;
+      color: #1541f2;
+      text-decoration: underline;
+
+    }
+
   }
 
   #nom-pseudo {

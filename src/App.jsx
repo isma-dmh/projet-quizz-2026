@@ -23,23 +23,24 @@ function App() {
           <Route path="/inscription" element={<Inscription />} />
           <Route path="/connexion" element={<Connexion />} />
           <Route
-            path="/mode"
             element={
               <ProtectedRoute isConnected={isConnected}>
-                <Mode />
+                <Outlet />
               </ProtectedRoute>
             }
-          />
-          <Route
-            element={
-              <PaysProvider>
-                <Outlet />
-              </PaysProvider>
-            }
           >
-            <Route path="/mode-normal" element={<Normal />} />
-            <Route path="/mode-chrono" element={<Chrono />} />
-            <Route path="/mode-entrainement" element={<Entrainement />} />
+            <Route path="/mode" element={<Mode />} />
+            <Route
+              element={
+                <PaysProvider>
+                  <Outlet />
+                </PaysProvider>
+              }
+            >
+              <Route path="/mode-normal" element={<Normal />} />
+              <Route path="/mode-chrono" element={<Chrono />} />
+              <Route path="/mode-entrainement" element={<Entrainement />} />
+            </Route>
           </Route>
         </Routes>
       </main>

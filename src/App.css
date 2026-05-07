@@ -106,7 +106,7 @@ header {
   cursor: pointer;
 }
 
-#croix {
+#burger #croix {
   width: 30px;
 }
 
@@ -153,12 +153,9 @@ footer > p {
       right: 0;
     }
 
-    #burger{
-
-       position: fixed;
-
+    #burger {
+      position: fixed;
     }
-     
   }
 
   @media (max-width: 500px) {

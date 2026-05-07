@@ -2,11 +2,13 @@
   padding: 1rem 0;
 }
 
-#cards-accueil > .card {
+#cards-accueil > .card,
+#cards-accueil > a > .card {
   width: 200px;
 }
 
-#cards-accueil > .card > p {
+#cards-accueil > .card > p,
+#cards-accueil > a > .card > p {
   text-align: center;
   font-size: 14px;
 }
