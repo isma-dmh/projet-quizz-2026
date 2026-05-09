@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 
 export const Resultat = ({ score, numeroQuestion, mode }) => {
   const user = JSON.parse(localStorage.getItem("user"));
-
   const [error, setError] = useState(false);
 
+  const bestScore = score * 100 > user[`score_${mode}`];
+
   useEffect(() => {
-    if (score * 100 <= user[`score_${mode}`]) return;
+    if (!bestScore) return;
 
     const fetchRecord = async () => {
       const userFetch = { pseudo: user.pseudo, [`score_${mode}`]: score * 100 };
@@ -39,6 +40,9 @@ export const Resultat = ({ score, numeroQuestion, mode }) => {
     <div className={`bloc-jeu jeu-${mode} resultat`}>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <h2>RÉSULTAT</h2>
+
+      {bestScore && <h3>🎉 Nouveau record personnel ! 🎉 </h3>}
+
       <p>
         Bonne réponse ✅: <span className="resultat-score">{score}</span>
       </p>
@@ -53,7 +57,7 @@ export const Resultat = ({ score, numeroQuestion, mode }) => {
         {" "}
         Meilleur score 🏆:{" "}
         <span className="resultat-score">
-          {user[`score_${mode}`] ? user[`score_${mode}`] : score * 100}
+          {bestScore ? score * 100 : user[`score_${mode}`]}
         </span>
       </p>
 
