@@ -41,6 +41,12 @@
   font-size: 1.5rem;
 }
 
+.resultat > h3{
+
+  font-size: 2rem;
+
+}
+
 .resultat > p {
   display: flex;
   justify-content: space-between;
@@ -54,7 +60,7 @@
     width: 80px;
   }
 
-  #resultat-score{
+  .resultat-score{
 
     color: #98cc02;
     font-weight: bold;
@@ -162,7 +168,7 @@
 
    :root {
     font-size: 14px;
-    height: 100dvh;
+    min-height: 100dvh;
   }
 
   body,#root,main{
@@ -210,6 +216,12 @@
 
   .resultat {
     gap: 3rem;
+  }
+
+  .resultat > h3{
+
+    font-size: 1.3rem;
+
   }
 
   .resultat > p {

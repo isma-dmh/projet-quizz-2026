@@ -7,13 +7,11 @@ import { Link } from "react-router-dom";
 
 export const Mode = () => {
   
-  const user = localStorage.getItem("pseudo")
-    ? localStorage.getItem("pseudo").toUpperCase()
-    : "JOUEUR";
+  const user = JSON.parse(localStorage.getItem("user"));
 
   return (
     <div id="mode" className="flex flex-col gap-9">
-      <h2 className="title">BIENVENUE {user}</h2>
+      <h2 className="title">BIENVENUE {user.pseudo.toUpperCase()}</h2>
       <h3>CHOISIS TON MODE DE JEU</h3>
       <div id="cards-mode" className="flex justify-around gap-5">
         <Link to={"/mode-normal"}>
