@@ -53,6 +53,11 @@ export const Header = () => {
                 </NavLink>
               </li>
               <li>
+                <NavLink className="boutton" to={"/scores"}>
+                  SCORES
+                </NavLink>
+              </li>
+              <li>
                 <button
                   onClick={handleDeconnect}
                   className="boutton btn-connect"

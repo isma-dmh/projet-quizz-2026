@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Resultat = ({ score, numeroQuestion, mode }) => {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -62,6 +63,7 @@ export const Resultat = ({ score, numeroQuestion, mode }) => {
       </p>
 
       <button onClick={() => window.location.reload()}>Recommencer ⟳</button>
+      <Link className="underline" to={"/scores"} >Tableau des scores</Link>
     </div>
   );
 };
