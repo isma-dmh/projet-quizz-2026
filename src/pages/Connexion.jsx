@@ -31,8 +31,8 @@ export const Connexion = () => {
       const data = await response.json();
 
       if (data.successConnexion) {
-        localStorage.setItem("user",JSON.stringify(data.user));
-        localStorage.setItem("connected",true);
+        localStorage.setItem("user", JSON.stringify(data.user));
+        localStorage.setItem("connected", true);
         navigate("/mode");
       } else {
         setCheck(true);
@@ -47,7 +47,12 @@ export const Connexion = () => {
       <div className="img-container"></div>
       <div className="formulaire">
         <h2>SE CONNECTER</h2>
-        <form action="">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit();
+          }}
+        >
           <div className="bloc-input">
             <label htmlFor="email">PSEUDO OU EMAIL</label>
             <input
