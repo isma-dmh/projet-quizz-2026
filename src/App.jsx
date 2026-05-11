@@ -12,6 +12,7 @@ import { Normal } from "./pages/Normal";
 import { Chrono } from "./pages/Chrono";
 import { Entrainement } from "./pages/Entrainement";
 import { PaysProvider } from "./context/PaysContext";
+import { Scores } from "./pages/Scores";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
               <Route path="/mode-chrono" element={<Chrono />} />
               <Route path="/mode-entrainement" element={<Entrainement />} />
             </Route>
+            <Route path="/scores" element={<Scores />} />
           </Route>
         </Routes>
       </main>
